@@ -74,8 +74,8 @@ Or from within a rake task using capistrano's `invoke`
 
 ```ruby
 task :my_custom_magerun_task do
-  # invoke 'magerun:run', 'sys:maintenance', '--on' # https://github.com/capistrano/capistrano/pull/928
-  Rake::Task['magerun:run'].invoke('sys:maintenance --off')
+  # invoke 'magerun:run', 'sys:maintenance', '--on' # after a new SSHKit release that includes https://github.com/capistrano/sshkit/pull/58
+  Rake::Task['magerun:run'].invoke('sys:maintenance --off') # until then
 end
 ```
 
