@@ -5,7 +5,7 @@ namespace :magerun do
       SSHKit.config.command_map[:magerun] = "\#{shared_path.join('n98-magerun.phar')}"
     This is best used before deploy:starting:
       namespace :deploy do
-        before :starting, 'magerun:install'
+        after :starting, 'magerun:install'
       end
   DESC
   task :install do

@@ -55,7 +55,7 @@ deployment (n98-magerun.phar is install in the shared path).
 SSHKit.config.command_map[:magerun] = "#{shared_path.join('n98-magerun.phar')}"
 
 namespace :deploy do
-  before :starting, 'magerun:install'
+  after :starting, 'magerun:install'
 end
 ```
 
