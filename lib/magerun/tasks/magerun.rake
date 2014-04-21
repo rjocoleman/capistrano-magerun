@@ -12,7 +12,7 @@ namespace :magerun do
     on roles fetch(:magerun_roles) do
       within shared_path do
         unless test '[', '-e', 'n98-magerun.phar', ']'
-          execute :curl, '-s', '-o', 'n98-magerun.phar', fetch(:magerun_download_url)
+          execute :curl, '--insecure', '-s', '-o', 'n98-magerun.phar', fetch(:magerun_download_url)
           execute :chmod, '+x', 'n98-magerun.phar'
         end
       end
