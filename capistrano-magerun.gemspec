@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'capistrano-magerun'
-  spec.version       = '0.1.2'
+  spec.version       = '0.1.3'
   spec.authors       = 'Robert Coleman'
   spec.email         = 'github@robert.net.nz'
   spec.description   = %q{n98-magerun support for Capistrano 3.x}
