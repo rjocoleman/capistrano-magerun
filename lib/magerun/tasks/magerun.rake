@@ -22,7 +22,7 @@ namespace :magerun do
   task :run, :command do |t, args|
     args.with_defaults(:command => :list)
     on roles fetch(:magerun_roles) do
-      within release_path do
+      within fetch(:magerun_rootdir) do
         execute :'n98-magerun.phar', args[:command], *args.extras
       end
     end
@@ -40,6 +40,7 @@ namespace :load do
 
     set :magerun_roles, :all
     set :magerun_download_url, 'https://raw.github.com/netz98/n98-magerun/master/n98-magerun.phar'
+    set :magerun_rootdir, ->{"#{release_path}"}
 
   end
 end

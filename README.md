@@ -44,6 +44,7 @@ Configurable options, shown here with defaults:
 ```ruby
 set :magerun_roles, :all
 set :magerun_download_url, 'https://raw.github.com/netz98/n98-magerun/master/n98-magerun.phar'
+set :magerun_rootdir, release_path
 ```
 
 ### Installing magerun as part of a deployment
