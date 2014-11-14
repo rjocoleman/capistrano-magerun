@@ -40,7 +40,7 @@ namespace :load do
 
     set :magerun_roles, :all
     set :magerun_download_url, 'https://raw.github.com/netz98/n98-magerun/master/n98-magerun.phar'
-    set :magerun_rootdir, ->{"#{release_path}"}
+    set :magerun_rootdir, ->{release_path}
 
   end
 end
