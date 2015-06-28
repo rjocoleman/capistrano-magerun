@@ -2,7 +2,7 @@ namespace :magerun do
   desc <<-DESC
     Installs n98-magerun.phar to the shared directory
     In order to use the .phar file, the magerun command needs to be mapped:
-      SSHKit.config.command_map[:magerun] = "\#{shared_path.join('n98-magerun.phar')}"
+      SSHKit.config.command_map[:'n98-magerun.phar'] = "\#{shared_path.join('n98-magerun.phar')}"
     This is best used before deploy:starting:
       namespace :deploy do
         after :starting, 'magerun:install'
