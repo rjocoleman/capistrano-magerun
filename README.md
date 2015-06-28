@@ -43,7 +43,8 @@ Configurable options, shown here with defaults:
 
 ```ruby
 set :magerun_roles, :all
-set :magerun_download_url, 'https://raw.github.com/netz98/n98-magerun/master/n98-magerun.phar'
+set :magerun_download_url, 'http://files.magerun.net/n98-magerun-latest.phar'
+set :magerun_rootdir, release_path
 ```
 
 ### Installing magerun as part of a deployment
@@ -52,7 +53,7 @@ Add the following to `deploy.rb` to manage the installation of magerun during
 deployment (n98-magerun.phar is install in the shared path).
 
 ```ruby
-SSHKit.config.command_map[:magerun] = "#{shared_path.join('n98-magerun.phar')}"
+SSHKit.config.command_map[:'n98-magerun.phar'] = "#{shared_path.join('n98-magerun.phar')}"
 
 namespace :deploy do
   after :starting, 'magerun:install'
@@ -74,8 +75,7 @@ Or from within a rake task using capistrano's `invoke`
 
 ```ruby
 task :my_custom_magerun_task do
-  # invoke 'magerun:run', 'sys:maintenance', '--on' # after a new SSHKit release that includes https://github.com/capistrano/sshkit/pull/58
-  Rake::Task['magerun:run'].invoke('sys:maintenance --off') # until then
+  Rake::Task['magerun:run'].invoke('sys:maintenance --off')
 end
 ```
 
