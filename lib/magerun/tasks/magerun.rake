@@ -39,7 +39,7 @@ namespace :load do
   task :defaults do
 
     set :magerun_roles, :all
-    set :magerun_download_url, 'https://raw.github.com/netz98/n98-magerun/master/n98-magerun.phar'
+    set :magerun_download_url, 'http://files.magerun.net/n98-magerun-latest.phar'
 
   end
 end
